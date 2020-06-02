@@ -1,9 +1,9 @@
 #Polefrone, DA. June 2020. 
-#Expected input: Cartesian coordinates only. 
+#Expected input: .com file only. 
 
 input_file=$1
 
-input_title=${input_file%%.txt}
+input_title=${input_file%%.xyz}
 new_com=$input_title'.com'
 
 echo "%nprocshared=16; %mem=16GB (default)."
@@ -19,6 +19,7 @@ echo "" >> $new_com
 echo "Specify Charge and Multiplicity (i.e. 'x y')"
 read ch_mult
 echo $ch_mult >> $new_com
-cat $input_file >> $new_com
+sed '1,2d' $input_file | cat >> $new_com
 echo "" >> $new_com
 echo "" >> $new_com
+
