@@ -1,2 +1,2 @@
 # comp_chem
-Collection of resources for simplifying computational chemistry workflows. 
+Miscellaneous resources for simplifying computational chemistry workflows. 
